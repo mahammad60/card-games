@@ -1,0 +1,51 @@
+stats = { "ragnar":{"strength": "99", "speed": "99", "stamina": "98"},
+          "björn":{"strength": "98", "speed": "100", "stamina": "99"}
+        }                                             
+print("choose your card: 1 - ragnar   2 - björn ")
+card = int(input (" > "))
+def add_card(stats):
+ card_name = input ("enter a card name ")
+ stats[card_name] = {} 
+ while True: 
+    key = input ("enter a key value for the card name or type done")
+    value =input ("enter a value for the key or type done ")
+    if key and value == "done".lower():
+       break
+    stats[card_name][key] = value
+
+
+add_card(stats)
+
+
+
+
+  
+
+def main(stats):
+ 
+  scoree = 0
+  score = 0
+  while True:
+       card = int(input (" > "))
+       print("choose your stat: \n 1. strength \n 2. speed \n 3. stamina")
+       choose = int(input ("> "))
+
+       if card == 1 and choose == 1:
+           print("ragnar has strength of",stats["ragnar"]["strength"])
+           score += 1
+       elif card == 1 and choose == 3:
+           print("ragnar has stamina of",stats["ragnar"]["stamina"])
+       elif card == 1 and choose == 2:
+           print("ragnar has speed of",stats["ragnar"]["speed"])
+       elif card == 2 and choose == 2:
+           print("björn has speed of",stats["björn"]["speed"])
+           scoree += 1
+       elif card == 2 and choose == 3:
+           print("björn has stamina of",stats["björn"]["stamina"])
+    
+           scoree += 1
+       elif card == 2 and choose == 1:
+           print("björn has strength of",stats["björn"]["strength"])
+    
+       if score == 2:
+           break
